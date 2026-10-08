@@ -1,0 +1,64 @@
+.picker-container {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.highlight-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 50px;
+  margin-top: -25px; /* Center it */
+  background: rgba(var(--accent), 0.1); /* Need to adjust hex to rgb or use opacity */
+  /* Fallback using variable directly if supported or just white */
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.scroll-list {
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-list::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.picker-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  scroll-snap-align: center;
+  color: var(--text-primary);
+  opacity: 0.5;
+  transition: opacity 0.3s, transform 0.3s;
+  cursor: pointer;
+  width: 100%; /* Ensure full width */
+}
+
+.picker-item.active {
+  opacity: 1;
+  transform: scale(1.1);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.spacer {
+  height: 75px; /* (Container Height - Item Height) / 2 = (200 - 50) / 2 = 75 */
+}

@@ -1,0 +1,11 @@
+jupyter
+ipykernel
+pdfplumber
+pandas
+scikit-learn
+numpy
+matplotlib
+seaborn
+pytesseract
+pdf2image
+opencv-python
